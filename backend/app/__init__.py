@@ -1,0 +1,1 @@
+"""SolVX Knowledge Core application."""
