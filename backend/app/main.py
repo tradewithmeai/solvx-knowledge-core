@@ -9,7 +9,7 @@ from backend import __version__
 from backend.app.config import settings
 from backend.app.db.session import init_db
 from backend.app.logging import RequestIDMiddleware, get_logger, setup_logging
-from backend.app.routes import admin, files, search
+from backend.app.routes import admin, chat, files, graph, insights, search
 
 # Set up logging
 setup_logging()
@@ -65,6 +65,9 @@ if settings.debug:
 app.include_router(admin.router)
 app.include_router(files.router)
 app.include_router(search.router)
+app.include_router(chat.router)
+app.include_router(graph.router)
+app.include_router(insights.router)
 
 
 @app.get("/")
